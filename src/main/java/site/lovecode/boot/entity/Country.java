@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by yang peng on 2016/9/29.
@@ -23,9 +24,14 @@ public class Country implements Serializable{
     @ApiModelProperty(value = "群组的Id", required = true)
     private String countryname;
 
-    @Column
+
     @ApiModelProperty(value = "群组的Id", required = true)
     private String countrycode;
+
+
+    @Column(name= "create_time")
+    @ApiModelProperty(value="创建时间",required = true)
+    private Date createTime;
 
 
     public Integer getId() {
@@ -50,6 +56,14 @@ public class Country implements Serializable{
 
     public void setCountrycode(String countrycode) {
         this.countrycode = countrycode;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     @Override
