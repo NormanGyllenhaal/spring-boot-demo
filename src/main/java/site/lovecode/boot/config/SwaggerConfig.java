@@ -43,7 +43,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("test")
                 .genericModelSubstitutes(DeferredResult.class)
-//                .genericModelSubstitutes(ResponseEntity.class)
+                //.genericModelSubstitutes(ResponseEntity.class)
                 .useDefaultResponseMessages(false)
                 .forCodeGeneration(true)
                 .pathMapping("/")// base，最终调用接口后会和paths拼接在一起
@@ -67,6 +67,7 @@ public class SwaggerConfig {
                 .build()
                 .apiInfo(demoApiInfo());
     }
+
 
     private ApiInfo testApiInfo() {
         ApiInfo apiInfo = new ApiInfo("Electronic Health Record(EHR) Platform API",//大标题

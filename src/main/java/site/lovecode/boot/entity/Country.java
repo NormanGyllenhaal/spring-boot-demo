@@ -1,5 +1,6 @@
 package site.lovecode.boot.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -30,6 +31,7 @@ public class Country implements Serializable{
 
 
     @Column(name= "create_time")
+    @JSONField(serialize=false)
     @ApiModelProperty(value="创建时间",required = true)
     private Date createTime;
 

@@ -20,9 +20,9 @@ public class SimpleController {
     @Autowired
     private CountryRepository countryRepository;
 
-    @RequestMapping(value = "/country", method=RequestMethod.POST)
+    @RequestMapping(value = "/country", method=RequestMethod.GET)
     @ResponseBody
-    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long")
+    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Integer")
     @ApiOperation(value="测试接口", notes="测试接口详细描述")
     public List<Country> hello(Integer id){
         List<Country> list = countryRepository.findAll();
